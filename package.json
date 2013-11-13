@@ -1,0 +1,18 @@
+{
+  "name": "tagchat",
+  "version": "0.0.1",
+  "dependencies": {
+    "mime": "1.2.7",
+	"express": "2.5.11",
+	"socket.io": "0.9.x",
+	"jade": "0.26.3",
+    "should": "1.2.x",
+	"winston": "0.6.2",
+	"mocha":"x.x.x",
+    "socket.io-client":"x.x.x"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  }
+}

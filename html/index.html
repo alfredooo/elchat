@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Chat</title>
+<script  src="http://localhost:8080/socket.io/socket.io.js"></script>
+<script src="http://localhost:8080/jquery.min.js"></script>
+<script>
+
+    var socket = io.connect('http://localhost');
+    socket.on('updateusers',onUpdateUsers);
+    socket.on('receive',onReceive);
+    
+    
+    var recipient;
+	function onUpdateUsers(data) {
+		delete data[socket.socket.sessionid];
+		for (first in data) break;
+		
+       	recipient = first;
+    }
+	
+	function onReceive(data) {
+		
+		alert(JSON.stringify(data));
+		
+		//$('#conversation').append('<b>'+ data.sender + ':</b> ' + data.content + '<br>');		
+	}
+    
+    // on load of page
+	$(
+		function() 
+		{
+			$('#login').click
+			( 
+				function() 
+				{
+					var usrJson = { 
+						'key'		: socket.socket.sessionid, 
+						'nick' 		: 'pepe',
+						'tags'		: ['tag2','tag1'],
+						'matches'	: {} 
+					};
+					
+					socket.emit('login',usrJson);
+				}
+			);
+
+            $('#logout').click
+            (
+                function()
+                {
+                    socket.emit('logout');
+                }
+            );
+
+			$('#datasend').click
+			( 
+				function() 
+				{
+					var data = { sender:socket.socket.sessionid, recipient:recipient , content:$('#data').val() };
+					$('#data').val('');
+					socket.emit('send',data);
+				}
+			);
+		}
+	);
+
+
+</script>
+</head>
+<body>
+	<input id="name" value="" >
+	<input type="button" id="login" value="login" />
+	<input type="button" id="logout" value="logout" />
+	<div id="conversation"></div>
+	<input id="data" style="width:200px;" />
+	<input type="button" id="datasend" value="send" />
+</body>
+</html>

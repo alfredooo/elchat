@@ -1,0 +1,79 @@
+.mainDivChatBoxClass{
+    background-color:white;
+    height: 275px;
+    width: 325px;
+
+    -moz-box-shadow: 10px 10px 5px #888;
+    -webkit-box-shadow: 10px 10px 5px #888;
+    box-shadow: 10px 10px 5px #888;
+}
+.chatBoxCloseClass{
+
+    background-color: #FFD700;
+    font-size: 22px;
+    height: 26px;
+    left: 98%;
+    position: relative;
+    top: -186%;
+    width: 28px;
+    cursor:pointer;
+
+    -moz-box-shadow: 10px 10px 5px #888;
+    -webkit-box-shadow: 10px 10px 5px #888;
+    box-shadow: 10px 10px 5px #888;
+
+    -moz-border-radius: 35px 35px 35px 35px;
+    border-radius: 35px 35px 35px 35px;
+}
+.closeLetterClass{
+    margin-left:6px;
+}
+.chatBoxMinimizeClass{
+    background-color:#ffe4c4;
+}
+.chatBoxTitleClass{
+    cursor:move;
+}
+.chatBoxHeaderClass{
+    width:100%;
+    height:22px;
+}
+.chatBoxMiddleClass{
+    background-color:ActiveCaption;
+    height:65%;
+    width:100%;
+}
+.chatBoxDialogClass{
+    overflow-y:auto;
+    height:100%;
+    width:100%;
+}
+.chatBoxFooterClass{
+    width:100%;
+    height:28%;
+}
+.chatBoxFTextBoxClass{
+    background-color: white;
+    float: left;
+    height: 99%;
+    width: 100%;
+    resize:none;
+}
+.chatBoxFAcceptButClass{
+    background-color: #DCDCDC;
+    float: left;
+    height: 100%;
+    width: 18%;
+}
+.chatBoxDialogText{
+    width:100%;
+    height:100%;
+}
+.historyEntry{
+    color:#a52a2a;
+}
+.chatBoxHistoryDiv{
+    background-color:#5f9ea0;
+    height:auto;
+    width:auto;
+}

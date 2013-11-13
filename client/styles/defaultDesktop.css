@@ -1,0 +1,24 @@
+.mainDivClass{
+    height:100%;
+    width:100%;
+}
+body{
+ background-color: #866FD7;
+}
+
+.BigBoxMessageClass{
+    background-color: grey;
+    height:100%;
+    width:100%;
+    position: fixed;
+    filter: alpha(opacity=50); /* internet explorer */
+    -khtml-opacity: 0.5;      /* khtml, version anterior de safari */
+    -moz-opacity: 0.5;       /* firefox, mozilla, netscape */
+    opacity: 0.5;           /* safari, chrome, opera */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /*internet explorer 8  */
+}
+.BigBoxMessageClass span{
+    position: relative;
+    top:40%;
+    left:32%;
+}

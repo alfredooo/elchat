@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        .mainDiv{
+            width:600px;
+            height:50px;
+            background-color:#daa520;
+            -webkit-perspective: 1000;
+        }
+         #domanim {
+             -moz-transition: all 2s ease-out;
+             -o-transition: all 2s ease-out;
+             -webkit-transition: all 2s ease-out;
+             transition: all 2s ease-out;
+
+             -webkit-transform: translateZ(0);
+         }
+        .mainDiv:hover{
+            -webkit-transform: rotateY(180deg);
+            -webkit-box-sizing: border-box;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="domanim" style="background-color:#faebd7;position:absolute;">
+      <div class="mainDiv">
+          <span>Leonardo</span>
+          <span>Alfredo</span>
+          <span>Levy</span>
+          <span>Garrido</span>
+      </div>
+      <div class="mainDiv">
+          <span>Leonadrdo</span>
+          <span>Alfredo</span>
+          <span>Levy</span>
+          <span>Garrido</span>
+      </div>
+         <div class="mainDiv">
+          <span>Leonadrdo</span>
+          <span>Alfredo</span>
+          <span>Levy</span>
+          <span>Garrido</span>
+      </div>
+      <div class="mainDiv">
+          <span>Leonadrdo</span>
+          <span>Alfredo</span>
+          <span>Levy</span>
+          <span>Garrido</span>
+      </div>
+      <div class="mainDiv">
+          <span>Leonadrdo</span>
+          <span>Alfredo</span>
+          <span>Levy</span>
+          <span>Garrido</span>
+      </div>
+    </div>
+</body>
+    <script type="text/javascript">
+        var elem = document.getElementById('domanim'),
+            left = 0;
+        console.log(elem);    /*
+        function move() {
+            left += 4; elem.style.left = left + 'px';
+            return left < 430;
+        }                       */
+        function move(){
+
+            if (Modernizr.csstransforms && Modernizr.csstransitions) {
+                // vendor prefixes omitted here for brevity
+                elem.style.transition = 'all 3s ease-out';
+                elem.style.transform = 'translateX(600px)';
+                alert("hdfds");
+              }
+            return false;
+        }
+        elem.addEventListener('click', function loop() {
+            move() && setTimeout(loop, 1000 / 60);
+        }, false);      /*
+        var elem2 = document.getElementById('domanim');
+        elem2.addEventListener('click', function loop2() { elem2.style.left = '430px'; }, false);        */
+    </script>
+</html>
